@@ -96,6 +96,7 @@ return {
         "typescript",
         "python",
         "yaml",
+        "bash",
       },
     },
   },
