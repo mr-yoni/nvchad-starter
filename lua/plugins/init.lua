@@ -1,23 +1,5 @@
 return {
   {
-    "rcarriga/nvim-dap-ui",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function()
-      local dap = require "dap"
-      local dapui = require "dapui"
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end,
-  },
-  {
     "mfussenegger/nvim-dap",
   },
   {
@@ -29,7 +11,36 @@ return {
     config = function(_, _opts)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
+      require("dap-python").test_runner = "pytest"
     end,
+  },
+  {
+    "folke/neodev.nvim",
+    opts = {},
+  },
+  {
+    "nvim-neotest/nvim-nio",
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "folke/neodev.nvim" },
+    config = function()
+      local dap, dapui = require "dap", require "dapui"
+      dapui.setup()
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
+    end,
+    event = "VeryLazy",
   },
   {
     "stevearc/conform.nvim",
@@ -90,7 +101,6 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
-    ft = "python",
     dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
     opts = {
       search = false,
@@ -104,6 +114,6 @@ return {
   },
   {
     "tpope/vim-surround",
-    ft = "*",
+    lazy = false,
   },
 }
