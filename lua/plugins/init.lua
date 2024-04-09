@@ -1,6 +1,9 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    config = function()
+      require "configs.dap"
+    end,
   },
   {
     "mfussenegger/nvim-dap-python",
@@ -43,15 +46,8 @@ return {
     event = "VeryLazy",
   },
   {
-    "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
-  },
-  {
     "nvimtools/none-ls.nvim",
-    ft = { "python" },
+    event = "VeryLazy",
     opts = function()
       return require "configs.null-ls"
     end,
