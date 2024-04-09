@@ -67,8 +67,11 @@ return {
         "lua-language-server",
         "stylua",
 
-        -- JS
+        -- JS/TS
+        "eslint-lsp",
         "prettier",
+        "typescript-language-server",
+        "js-debug-adapter",
 
         -- Python
         "pyright",
