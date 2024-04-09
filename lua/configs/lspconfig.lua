@@ -10,6 +10,9 @@ local servers = {
   "tsserver",
   "pyright",
   "ruff_lsp",
+  "eslint",
+  "dockerls",
+  "marksman",
 }
 
 -- lsps with default config
