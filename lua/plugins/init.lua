@@ -79,8 +79,14 @@ return {
         "ruff-lsp",
         "black",
         "debugpy",
+        "isort",
+
         -- YAML
         "yamlfmt",
+
+        -- misc
+        "dockerfile-language-server",
+        "marksman",
       },
     },
   },
