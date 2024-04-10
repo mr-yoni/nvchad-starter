@@ -21,4 +21,10 @@ end, { noremap = true })
 map("n", "<leader>fr", function()
   require("telescope.builtin").lsp_references()
 end, { noremap = true, desc = "Telescope find code references" })
+map("n", "<leader>b", function()
+  require("telescope.builtin").buffers {
+    sort_mru = true,
+    ignore_current_buffer = true,
+  }
+end, { noremap = true, desc = "Telescope open buffers" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
