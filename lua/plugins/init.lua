@@ -1,13 +1,5 @@
 return {
   {
-    "cormacrelf/dark-notify",
-    config = function()
-      dark = "catppuccin"
-      light = "catppuccin-latte"
-    end
-    lazy = false,
-  },
-  {
     "mfussenegger/nvim-dap",
     config = function()
       require "configs.dap"
