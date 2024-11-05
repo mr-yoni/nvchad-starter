@@ -128,4 +128,16 @@ return {
     "tpope/vim-surround",
     lazy = false,
   },
+  {
+    "icholy/lsplinks.nvim",
+    config = function()
+      local lsplinks = require "lsplinks"
+      lsplinks.setup()
+    end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
 }
