@@ -21,3 +21,15 @@ for _, language in ipairs { "typescript", "javascript" } do
     },
   }
 end
+
+dap.configurations["env"] = function()
+  local variables = {}
+  for k, v in pairs(vim.fn.environ()) do
+    table.insert(variables, string.format("%s=%s", k, v))
+  end
+  return variables
+end
+
+dap.defaults.fallback.terminal_win_cmd = function()
+  vim.cmd "tabnew"
+end
