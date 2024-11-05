@@ -69,7 +69,7 @@ return {
 
         -- JS/TS
         "eslint-lsp",
-        "prettier",
+        "prettierd",
         "typescript-language-server",
         "js-debug-adapter",
 
@@ -81,12 +81,14 @@ return {
         "debugpy",
         "isort",
 
-        -- YAML
+        -- YAML/JSON
         "yamlfmt",
+        "json-lsp",
 
         -- misc
         "dockerfile-language-server",
         "marksman",
+        "terraform-ls",
       },
     },
   },
