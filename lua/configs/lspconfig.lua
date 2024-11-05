@@ -8,11 +8,13 @@ local servers = {
   "html",
   "cssls",
   "tsserver",
+  "eslint",
   "pyright",
   "ruff_lsp",
-  "eslint",
   "dockerls",
   "marksman",
+  "jsonls",
+  "terraformls",
 }
 
 -- lsps with default config
