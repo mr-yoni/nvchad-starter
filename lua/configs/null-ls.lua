@@ -5,11 +5,11 @@ local ops = {
     null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.zsh,
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.black.with {
-      extra_args = { "--line-length=100", "-tpy38", "-tpy39", "-tpy310", "-tpy311" },
-    },
+    -- null_ls.builtins.formatting.black.with {
+    --   extra_args = { "--line-length=100", "-tpy38", "-tpy39", "-tpy310", "-tpy311" },
+    -- },
     null_ls.builtins.formatting.isort,
-    null_ls.builtins.formatting.prettier,
+    -- null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.yamlfmt.with {
       extra_args = { "retain_line_breaks=true" },
     },
