@@ -23,3 +23,17 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+if servers["jsonls"] then
+  lspconfig.jsonls.setup {
+    settings = {
+      json = {
+        validate = { enable = true },
+        schemastore = {
+          enable = false,
+          url = "",
+        },
+      },
+    },
+  }
+end
